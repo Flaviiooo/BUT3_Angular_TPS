@@ -1,7 +1,16 @@
 <form [formGroup]="bookForm" (ngSubmit)="onSubmit()"> 
-    <input type="text" class="form-control" placeholder="Title" formControlName="title">
-    <input type="text" class="form-control" placeholder="Author" formControlName="author">
-    <input type="date" class="form-control" placeholder="Publication Date" formControlName="publicationDate">
+      <mat-form-field>
+        <mat-label>Title</mat-label>
+        <input matInput type="text" placeholder="Title" formControlName="title">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Author</mat-label>
+        <input matInput type="text" placeholder="Author" formControlName="author">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Publication Date</mat-label>
+        <input matInput type="date" placeholder="Publication Date" formControlName="publicationDate">
+    </mat-form-field>
 
-    <button type="submit">Add Book</button>
-</form>
+    <button mat-raised-button type="submit">Add Book</button>
+</form> 
