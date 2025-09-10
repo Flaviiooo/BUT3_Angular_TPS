@@ -1,20 +1,25 @@
 import { Component } from '@angular/core';
 import { BookService } from '../service/bookService/book-service';
 import { Book } from '../model/book';
+import { FormatDatePipe } from '../format-date-pipe';
 
 @Component({
   selector: 'app-book-list',
-  imports: [],
+  imports: [FormatDatePipe],
   templateUrl: './book-list.html',
   styleUrl: './book-list.css'
 })
 export class BookList {
-  constructor(private bookService: BookService) {
-    this.books = this.bookService.getAll();
-    console.log(this.books);
+
+    books: Book[] = [];
+
+  constructor(protected bookService: BookService) {
   }
 
-  books: Book[] = [];
+  ngOnInit(){
+    this.books = this.bookService.getAll();
+  }
+
 
 }
 
