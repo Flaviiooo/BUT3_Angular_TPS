@@ -1,6 +1,7 @@
-<form> 
-    <input type="text" placeholder="Title">
-    <input type="text" placeholder="Author">
-    <input type="date" placeholder="Publication Date">
+<form [formGroup]="bookForm" (ngSubmit)="onSubmit()"> 
+    <input type="text" class="form-control" placeholder="Title" formControlName="title">
+    <input type="text" class="form-control" placeholder="Author" formControlName="author">
+    <input type="date" class="form-control" placeholder="Publication Date" formControlName="publicationDate">
+
     <button type="submit">Add Book</button>
 </form>

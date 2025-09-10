@@ -17,4 +17,9 @@ export class BookService {
     return this.books;
   }
 
+  addBook(book: Book): void {
+    this.books.push(book);
+    console.log("Book added:", this.books);
+  }
+
 }
