@@ -35,7 +35,6 @@ export class BookForm {
     }
     else {
       console.log("Formulaire invalide");
-      // Ajouter une gestion des erreurs dans le template
     }
   }
 }

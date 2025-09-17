@@ -18,8 +18,16 @@ export class BookService {
   }
 
   addBook(book: Book): void {
+    if(book.id === 0){
+        book.id = Math.max(...this.books.map(b => b.id)) + 1;
+      }
+    for( const item of this.books){
+      if( item.title === book.title && item.author === book.author){
+        console.log("Livre déjà existant");
+        return;
+      }
+    }
     this.books.push(book);
-    console.log("Book added:", this.books);
-  }
+    }
 
 }

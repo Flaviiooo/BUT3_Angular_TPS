@@ -1,5 +1,7 @@
 <ul>
 @for(book of books; track book.id){
-    <li> {{book.title}} {{book.publicationDate | formatDate}} </li>
+    <a>
+            <li> {{book.title}} {{book.publicationDate | formatDate}} </li>
+    </a>
 }
 </ul>
