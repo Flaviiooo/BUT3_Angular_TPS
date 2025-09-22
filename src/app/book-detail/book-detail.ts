@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
-import { Inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { NgModule } from '@angular/core';
+import { Book } from '../model/book';
+import { BookService } from '../service/bookService/book-service';
 
 @Component({
   selector: 'app-book-detail',
@@ -12,10 +12,13 @@ import { NgModule } from '@angular/core';
 export class BookDetail {
   private route = inject(ActivatedRoute);
   bookId: number = 0;
+  private book!: Book;
 
+  constructor(private apiService:BookService){
+  }
   ngOnInit(){
     this.bookId = Number(this.route.snapshot.params['id']);
-    
-    console.log(this.bookId);
+    // TODO : Fecth API books with books
+    this.book = this.apiService.getBook(this.bookId);
   }
 }

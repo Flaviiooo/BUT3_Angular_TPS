@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Book } from '../../model/book';
+import { ApiService } from '../api/api-service';
 
 const BOOKS: Book[] = [
   <Book>{ id: 1, title: '1984', author: 'George Orwell', publicationDate: new Date('1949-06-08') },
@@ -11,6 +12,7 @@ const BOOKS: Book[] = [
   providedIn: 'root'
 })
 export class BookService {
+  
   private books: Book[] = BOOKS;
 
   getAll(): Book[] {
@@ -23,11 +25,19 @@ export class BookService {
       }
     for( const item of this.books){
       if( item.title === book.title && item.author === book.author){
-        console.log("Livre déjà existant");
+        console.log("Book already exist");
         return;
       }
     }
     this.books.push(book);
+    }
+
+    getBook(id: number): Book  {
+     let book = this.books.find( book => book.id === Number(id));
+     if(!book){
+      throw new Error(`Error: Cannot find book with id ${id}`);
+     }
+     return book;
     }
 
 }

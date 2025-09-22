@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { BookService } from '../service/bookService/book-service';
 import { Book } from '../model/book';
-import { FormatDatePipe } from '../format-date-pipe';
+import { FormatDatePipe } from '../pipe/format-date-pipe';
 import { ApiService } from '../service/api/api-service';
 import { Subscription } from 'rxjs';
 

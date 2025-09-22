@@ -16,18 +16,6 @@ getApiBooks(): Observable<Book[]> {
   return this.http.get<any[]>(this.defaultApi);
 }
 
-// Transformer en book
-/* .pipe(
-    map(items =>
-      items.map(item => ({
-        id: Number(item.id), 
-        title: item.title,
-        author: item.author,
-        publicationDate: new Date(item.publicationDate)
-      }))
-    )
-  );
-*/
   addApiBook(book: Book): void{
     this.http.post(this.myApiBaseUrl,book);
   }
