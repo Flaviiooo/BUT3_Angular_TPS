@@ -12,6 +12,13 @@ const BOOKS: Book[] = [
   providedIn: 'root'
 })
 export class BookService {
+
+  constructor(private apiService : ApiService){
+    this.apiService.getApiBooks().subscribe({
+      next: books  => { books.map( book => this.books.push(book))},
+      error: errors => console.log(errors)
+    })
+  }
   
   private books: Book[] = BOOKS;
 
@@ -30,6 +37,10 @@ export class BookService {
       }
     }
     this.books.push(book);
+    this.apiService.addApiBook(book).subscribe({
+      next: res => console.log("Ajout réussi :", res),
+      error: errors => console.log(errors)
+    })
     }
 
     getBook(id: number): Book  {

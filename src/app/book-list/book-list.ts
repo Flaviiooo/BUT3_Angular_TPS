@@ -3,7 +3,6 @@ import { BookService } from '../service/bookService/book-service';
 import { Book } from '../model/book';
 import { FormatDatePipe } from '../pipe/format-date-pipe';
 import { ApiService } from '../service/api/api-service';
-import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-book-list',
@@ -12,7 +11,6 @@ import { Subscription } from 'rxjs';
   styleUrl: './book-list.css'
 })
 export class BookList {
-  private sub: Subscription = new Subscription();
     books: Book[] = [];
 
   constructor(protected bookService: BookService, protected apiService: ApiService) {
@@ -20,12 +18,6 @@ export class BookList {
 
   ngOnInit(){
     this.books = this.bookService.getAll();
-    this.sub.add(
-      this.apiService.getApiBooks().subscribe({
-        next: books => this.books = books,
-        error: errors => console.error("Erreur de récupération", errors)
-      })
-    );
   }
 
 

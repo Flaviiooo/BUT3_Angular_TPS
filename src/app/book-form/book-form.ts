@@ -8,6 +8,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { ApiService } from '../service/api/api-service';
+import { BookService } from '../service/bookService/book-service';
 
 
 @Component({
@@ -22,7 +23,7 @@ export class BookForm {
 
   @Output() bookCreated = new EventEmitter<Book>();
 
-  constructor(private fb: FormBuilder, protected apiService: ApiService) {
+  constructor(private fb: FormBuilder, protected apiService: ApiService, private bookService : BookService) {
     this.bookForm = this.fb.group({
       title: ['', [Validators.required]],
       author: ['', [Validators.required]],
@@ -32,8 +33,7 @@ export class BookForm {
 
   onSubmit() {
     if (this.bookForm.valid) {
-      this.apiService.addApiBook(this.bookForm.value);
-      console.log("Ajout");
+      this.bookService.addBook(this.bookForm.value);
     }
     else {
       console.log("Formulaire invalide");
