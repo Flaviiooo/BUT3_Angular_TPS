@@ -24,4 +24,8 @@ getApiBooks(): Observable<Book[]> {
     return this.http.get<Book>(this.myApiBaseUrl);
   }
 
+  deleteApiBook(id:number): Observable<Book>{
+    return this.http.delete<Book>(this.myApiBaseUrl+"/"+id);
+  }
+
 }

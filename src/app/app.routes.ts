@@ -6,7 +6,6 @@ import { ErrorPage } from './components/error-page/error-page';
 import { App } from './app';
 
 export const routes: Routes = [
-    { path: '', component: App }, 
     { path: 'books', component: BookList },
     { path: 'book/add', component: BookForm},
     { path: 'book/:id', component: BookDetail},

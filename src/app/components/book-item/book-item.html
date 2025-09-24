@@ -1,3 +1,9 @@
-    <a routerLink="/book/{{book.id}}">
-            <li> {{book.title}} by {{book.author}} [{{book.publicationDate}}]</li>
-    </a>
+<div>
+
+<a routerLink="/book/{{book.id}}">
+    <li> {{book.title}} by {{book.author}} [{{book.publicationDate}}]</li>
+</a>
+<button matFab (click)="deleteBook()">
+    <mat-icon>delete</mat-icon>
+</button>
+</div>

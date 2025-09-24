@@ -51,4 +51,10 @@ export class BookService {
      return book;
     }
 
+    deleteBook(book: Book){
+      this.books = this.books.filter(b => b.id !== book.id);
+      this.apiService.deleteApiBook(book.id).subscribe({
+      })
+    }
+
 }
