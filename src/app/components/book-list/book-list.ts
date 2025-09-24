@@ -3,10 +3,11 @@ import { BookService } from '../../service/bookService/book-service';
 import { Book } from '../../model/book';
 import { FormatDatePipe } from '../../pipe/format-date-pipe';
 import { ApiService } from '../../service/api/api-service';
+import { BookItem } from '../book-item/book-item';
 
 @Component({
   selector: 'app-book-list',
-  imports: [FormatDatePipe],
+  imports: [BookItem],
   templateUrl: './book-list.html',
   styleUrl: './book-list.css'
 })
