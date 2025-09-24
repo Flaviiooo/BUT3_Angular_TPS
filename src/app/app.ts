@@ -2,7 +2,7 @@ import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {BookService} from './service/bookService/book-service';
 import { Book } from './model/book';
-import { Navbar } from './navbar/navbar'
+import { Navbar } from './components/navbar/navbar'
 
 
 @Component({

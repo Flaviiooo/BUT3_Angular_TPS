@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Output, EventEmitter } from '@angular/core';
-import { Book } from '../model/book';
+import { Book } from '../../model/book';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import { ApiService } from '../service/api/api-service';
-import { BookService } from '../service/bookService/book-service';
+import { ApiService } from '../../service/api/api-service';
+import { BookService } from '../../service/bookService/book-service';
 
 
 @Component({

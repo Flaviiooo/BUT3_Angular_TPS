@@ -1,8 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Book } from '../model/book';
-import { BookService } from '../service/bookService/book-service';
-import { ApiService } from '../service/api/api-service';
+import { Book } from '../../model/book';
+import { BookService } from '../../service/bookService/book-service';
+import { ApiService } from '../../service/api/api-service';
 
 @Component({
   selector: 'app-book-detail',
